@@ -47,6 +47,6 @@ a {
 }
   
 .sidebar ul > li:hover > a {
-    color: orange;
+    color: darkorange;
     background-color: #555;
 }
