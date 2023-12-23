@@ -22,7 +22,6 @@ a {
     width: var(--side-bar-width);
     min-height: var(--side-bar-height);
     margin-top: calc((100vh - var(--side-bar-height)) / 2);
-    border-radius: 20px;
     transform: translate(calc(var(--side-bar-width) * -0.8), 0);
     transition: .5s;
 }
