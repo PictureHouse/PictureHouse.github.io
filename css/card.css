@@ -45,6 +45,7 @@ main a {
   backface-visibility: hidden;
   transform: rotateX(0deg);
   transition: 0.5s;
+  border-radius: 30px;
 }
 
 .card-back {
@@ -59,6 +60,7 @@ main a {
   transition: 0.5s;
   color: #ffffff;
   text-align: center;
+  border-radius: 30px;
 }
 
 .card-back h2 {
