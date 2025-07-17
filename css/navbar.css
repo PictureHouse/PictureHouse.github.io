@@ -1,0 +1,39 @@
+/* PictureHouse Top Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+.navbar img {
+    margin-right: 30px;
+    width: 120px;
+    height: auto;
+}
+.navbar ul {
+    display: flex;
+    margin-left: 30px;
+    gap: 20px;
+}
+.navbar ul li a {
+    color: dimgray;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+.navbar ul li a:hover, .navbar ul li a.active {
+    color: darkorange;
+    background: #eee;
+}
+body {
+    padding-top: 80px;
+}

@@ -1,51 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PictureHouse</title>
-  <link rel="stylesheet" href="css/button.css">
-  <link rel="stylesheet" href="css/sidebar.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PictureHouse</title>
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
 
 <header>
-  <!-- 헤더 영역 -->
+    <div id="navbar-container"></div>
+    <script>
+      fetch('navbar.html?v=' + Date.now())
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-container').innerHTML = data;
+          // Highlight current page
+          const page = location.pathname.split('/').pop().split('.')[0];
+          if(page) {
+            const navId = 'nav-' + page;
+            const active = document.getElementById(navId);
+            if(active) active.classList.add('active');
+          }
+        });
+    </script>
 </header>
 
-<aside class="sidebar">
-  <img src="icon/menu-burger.png" style="margin-left: 320px; width: 30px;">
-  <img src="image/PictureHouse_Logo.jpeg" style="margin-left: 45px; width: 240px;">
-  <ul>
-    <li>
-      <a href="index.html">Overview</a>
-    </li>
-    <li>
-      <a href="hyu.html">Hanyang Univ. CSE</a>
-    </li>
-    <li>
-      <a href="est.html" style="color: darkorange;">ESTsoft</a>
-    </li>
-    <li>
-      <a href="ada.html">Apple Developer Academy</a>
-    </li>
-  </ul>
-</aside>
-
 <body>
-  <!-- 본문 영역 -->
+    <!-- 본문 영역 -->
 </body>
 
-<footer style="position: fixed; bottom: 0; width: 100%; background-color: white;">
-  <div class="buttom_buttons">
-    <button type="button" class="sns_button" onclick="location.href='index.html'"><img src="icon/home.png" width="100%"></button>
-    <button type="button" class="sns_button" onclick="window.open('https://github.com/PictureHouse')"><img src="icon/github.png" width="100%"></button>
-    <button type="button" class="sns_button" onclick="window.open('https://www.linkedin.com/in/choyune/')"><img src="icon/linkedin.png" width="100%"></button>
-    <button type="button" class="sns_button" onclick="window.open('https://blog.naver.com/picture_house')"><img src="icon/naver.png" width="100%"></button>
-  </div>
-  <div>
-    <h5 style="text-align: center;">[v0.0.7] 2024 PictureHouse. All rights reserved.</h5>
-  </div>
-</footer>
+<footer id="common-footer" style="position: fixed; bottom: 0; width: 100%; background-color: white;"></footer>
+<script>
+    fetch('footer.html?v=' + Date.now())
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('common-footer').innerHTML = data;
+        });
+</script>
 
 </html>
