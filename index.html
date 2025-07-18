@@ -1,50 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PictureHouse</title>
-    <link rel="stylesheet" href="css/button.css">
-    <link rel="stylesheet" href="css/sidebar.css">
-    <link rel="stylesheet" href="css/card.css">
-    <link rel="stylesheet" href="css/navbar.css">
-</head>
-
-<header>
-    <div id="navbar-container"></div>
-    <script>
-    fetch('navbar.html?v=' + Date.now())
-        .then(response => response.text())
-        .then(data => {
-        document.getElementById('navbar-container').innerHTML = data;
-        // Highlight current page
-        const page = location.pathname.split('/').pop().split('.')[0];
-        if(page) {
-            const navId = 'nav-' + page;
-            const active = document.getElementById(navId);
-            if(active) active.classList.add('active');
-        }
-        });
-    </script>
-</header>
-
-<main>
-    <div class="card">
-        <div class="card-front"></div>
-        <div class="card-back">
-            <h2>Yune Cho(조윤)<br><span>CSE Student</span></h2>
-        </div>
-    </div>
-</main>
-
-<footer id="common-footer" style="position: fixed; bottom: 0; width: 100%; background-color: white;"></footer>
-<script>
-    fetch('footer.html?v=' + Date.now())
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('common-footer').innerHTML = data;
-        });
-</script>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
