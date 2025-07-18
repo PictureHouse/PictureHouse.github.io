@@ -33,7 +33,7 @@ export default function Navbar({ selected, onSelect }) {
               className="navbar-icon-btn"
               onClick={() => window.open("https://github.com/PictureHouse")}
             >
-              <img src="/assets/github.png" alt="GitHub" style={{ width: 28, height: 28, display: "block" }} />
+              <img src={`${import.meta.env.BASE_URL}assets/github.png`} alt="GitHub" style={{ width: 28, height: 28, display: "block" }} />
             </button>
             <button
               type="button"
@@ -41,7 +41,7 @@ export default function Navbar({ selected, onSelect }) {
               className="navbar-icon-btn"
               onClick={() => window.open("https://www.linkedin.com/in/choyune/")}
             >
-              <img src="/assets/linkedin.png" alt="LinkedIn" style={{ width: 28, height: 28, display: "block" }} />
+              <img src={`${import.meta.env.BASE_URL}assets/linkedin.png`} alt="LinkedIn" style={{ width: 28, height: 28, display: "block" }} />
             </button>
           </li>
         </ul>
