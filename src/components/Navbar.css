@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 16px;
 }
 
 .navbar-nav-with-icons {
@@ -18,7 +19,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 100%;
 }
 
@@ -49,7 +50,6 @@
   gap: 16px;
 }
 
-
 .navbar-icon-btn {
   background: #f3f4f6;
   border: none;
@@ -79,6 +79,7 @@
   text-decoration: none;
   margin: 0;
   display: inline-block;
+  white-space: nowrap;
 }
 
 .navbar-link-active {
@@ -96,3 +97,226 @@
   outline: none;
 }
 
+/* 드롭다운 메뉴 스타일 */
+.navbar-dropdown-container {
+  position: relative;
+  flex: 1;
+}
+
+.navbar-dropdown-toggle {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 280px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #222;
+  transition: all 0.2s;
+  min-width: 0;
+  gap: 8px;
+}
+
+.navbar-dropdown-toggle span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  text-align: left;
+}
+
+.navbar-dropdown-toggle:hover {
+  background: #e7fbe8;
+  border-color: #22c55e;
+}
+
+.navbar-dropdown-arrow {
+  font-size: 0.7rem;
+  transition: transform 0.2s;
+  color: #666;
+}
+
+.navbar-dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.navbar-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  margin: 4px 0 0 0;
+  padding: 0;
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.navbar-dropdown-item {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #222;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.navbar-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.navbar-dropdown-item:hover {
+  background: #f8f9fa;
+}
+
+.navbar-dropdown-item.active {
+  background: #e7fbe8;
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* 모바일 반응형 스타일 */
+@media (max-width: 768px) {
+  .navbar-header {
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+  
+  .navbar-nav-with-icons {
+    gap: 12px;
+    width: 100%;
+    max-width: none;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  
+  .navbar-dropdown-container {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .navbar-dropdown-toggle {
+    width: 100%;
+    max-width: calc(100vw - 120px);
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+  
+  .navbar-icons-group {
+    gap: 8px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .navbar-icon-btn {
+    padding: 6px;
+    min-width: 34px;
+    min-height: 34px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navbar-icon-btn img {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-header {
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+  
+  .navbar-nav-with-icons {
+    gap: 8px;
+    max-width: none;
+    box-sizing: border-box;
+  }
+  
+  .navbar-dropdown-toggle {
+    width: 100%;
+    max-width: calc(100vw - 100px);
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+  
+  .navbar-dropdown-item {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .navbar-icons-group {
+    gap: 6px;
+  }
+  
+  .navbar-icon-btn {
+    padding: 4px;
+    min-width: 29px;
+    min-height: 29px;
+    width: 29px;
+    height: 29px;
+  }
+  
+  .navbar-icon-btn img {
+    width: 17px !important;
+    height: 17px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar-header {
+    padding: 0 6px;
+    box-sizing: border-box;
+  }
+  
+  .navbar-nav-with-icons {
+    gap: 6px;
+    max-width: none;
+    box-sizing: border-box;
+  }
+  
+  .navbar-dropdown-toggle {
+    width: 100%;
+    max-width: calc(100vw - 80px);
+    font-size: 0.75rem;
+    padding: 5px 6px;
+  }
+  
+  .navbar-icons-group {
+    gap: 4px;
+  }
+  
+  .navbar-icon-btn {
+    padding: 3px;
+    min-width: 25px;
+    min-height: 25px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .navbar-icon-btn img {
+    width: 15px !important;
+    height: 15px !important;
+  }
+}

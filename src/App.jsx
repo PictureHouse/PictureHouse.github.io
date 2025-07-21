@@ -21,8 +21,8 @@ function App() {
   return (
     <>
       <Navbar selected={selected} onSelect={setSelected} />
-      <main style={{ minHeight: "calc(100vh - 140px)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <h1 style={{ fontSize: 36, fontWeight: 700, color: "#222", margin: 0 }}>{getLabel(selected)}</h1>
+      <main className="main-content">
+        <h1 className="main-title">{getLabel(selected)}</h1>
       </main>
       <Footer />
     </>

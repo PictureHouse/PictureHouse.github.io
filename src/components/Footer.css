@@ -56,3 +56,26 @@
   font-size: 14px;
   margin: 0;
 }
+
+/* 모바일 반응형 스타일 */
+@media (max-width: 768px) {
+  .footer-root {
+    padding: 6px 0;
+  }
+  
+  .footer-copyright-text {
+    font-size: 12px;
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-root {
+    padding: 4px 0;
+  }
+  
+  .footer-copyright-text {
+    font-size: 11px;
+    padding: 0 8px;
+  }
+}
